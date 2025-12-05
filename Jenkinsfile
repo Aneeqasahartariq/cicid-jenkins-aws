@@ -19,7 +19,7 @@ node {
         sh """
             sudo mkdir -p ${appDir}
             sudo chown -R jenkins:jenkins ${appDir}
-
+             jenkins:jenkins ${appDir}
             rsync -av --delete --exclude='.git' --exclude='node_modules' ./ ${appDir}
 
             cd ${appDir}
